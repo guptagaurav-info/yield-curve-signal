@@ -1,0 +1,14 @@
+# Does the yield curve still predict recessions and bear markets? US Treasury curve 1990-2026, SPY 1996-2026
+spread: [bc_10year, bc_3month]   # 10-year minus 3-month (the NY Fed's preferred measure)
+alt_spread: [bc_10year, bc_2year]
+min_inverted_months: 3           # an episode = at least 3 months with a negative monthly-average spread
+merge_gap_months: 3              # inverted months closer than this belong to one episode
+horizon_months: 12               # "recession within the next 12 months"
+equity: SPY
+start_equity: "1996-02-01"
+# NBER US business-cycle peaks and troughs (months), nber.org/research/business-cycle-dating
+recessions: [["1990-07", "1991-03"], ["2001-03", "2001-11"], ["2007-12", "2009-06"], ["2020-02", "2020-04"]]
+sources:
+  daily_treasury_yield.parquet: {url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/daily_treasury_yield.parquet, sha256: 0bc38100e008b06dcf9bfb1add8a4eece126a3e10759e35baeeb18c9d4bcbf3d}
+  stock_prices.parquet: {url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_prices.parquet, sha256: 4528c705aafbcba6fe530e3d5adbc830cdeb6a6c7e9caba4dd445dd91994c59f}
+  stock_dividend_events.parquet: {url: https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/US/stock_dividend_events.parquet, sha256: 40ecede768508dae426386e71db624c9e2b020c37d38e011bcba4b6b31a5aecd}

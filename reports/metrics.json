@@ -1,0 +1,152 @@
+{
+  "sample": {
+    "curve_start": "1990-01-31",
+    "end": "2026-10-31",
+    "equity_start": "1996-02-29",
+    "months": 442
+  },
+  "now": {
+    "spread_10y3m_pp": 0.9110000000000001,
+    "spread_10y2y_pp": 0.38800000000000007,
+    "bill": 0.042295,
+    "probit_p12": 0.2073734230547274
+  },
+  "episodes_10y3m": [
+    {
+      "start": "2000-07",
+      "end": "2001-01",
+      "months": 7,
+      "min_spread_pp": -0.6965000000000001,
+      "recession_start": "2001-03",
+      "lead_months": 8.0,
+      "spy_to_recession": -0.1419513485450541,
+      "spy_next12": -0.14654832691778896,
+      "spy_maxdd_24m": -0.33406580573196165
+    },
+    {
+      "start": "2006-08",
+      "end": "2007-05",
+      "months": 10,
+      "min_spread_pp": -0.5154545454545455,
+      "recession_start": "2007-12",
+      "lead_months": 16.0,
+      "spy_to_recession": 0.18970337507615986,
+      "spy_next12": 0.16068357951873513,
+      "spy_maxdd_24m": -0.16738026933071637
+    },
+    {
+      "start": "2019-05",
+      "end": "2019-09",
+      "months": 5,
+      "min_spread_pp": -0.3640909090909092,
+      "recession_start": "2020-02",
+      "lead_months": 9.0,
+      "spy_to_recession": 0.11008452632669541,
+      "spy_next12": 0.008419754039212135,
+      "spy_maxdd_24m": -0.194264895337373
+    },
+    {
+      "start": "2022-11",
+      "end": "2024-11",
+      "months": 25,
+      "min_spread_pp": -1.7345454545454546,
+      "recession_start": NaN,
+      "lead_months": NaN,
+      "spy_to_recession": NaN,
+      "spy_next12": 0.10004733548671996,
+      "spy_maxdd_24m": -0.08321908844615056
+    },
+    {
+      "start": "2025-03",
+      "end": "2025-08",
+      "months": 5,
+      "min_spread_pp": -0.05523809523809514,
+      "recession_start": NaN,
+      "lead_months": NaN,
+      "spy_to_recession": NaN,
+      "spy_next12": 0.16803323800376102,
+      "spy_maxdd_24m": -0.0575575470636307
+    }
+  ],
+  "episodes_10y2y": [
+    {
+      "start": "2000-02",
+      "end": "2000-12",
+      "months": 11,
+      "min_spread_pp": -0.413157894736842,
+      "recession_start": "2001-03",
+      "lead_months": 13.0,
+      "spy_to_recession": -0.10241103516651562,
+      "spy_next12": -0.0077640987375223736,
+      "spy_maxdd_24m": -0.30404012820669113
+    },
+    {
+      "start": "2006-02",
+      "end": "2007-05",
+      "months": 13,
+      "min_spread_pp": -0.14523809523809528,
+      "recession_start": "2007-12",
+      "lead_months": 22.0,
+      "spy_to_recession": 0.20304208221833964,
+      "spy_next12": 0.14832135585088735,
+      "spy_maxdd_24m": -0.10708887905693787
+    },
+    {
+      "start": "2022-07",
+      "end": "2024-08",
+      "months": 26,
+      "min_spread_pp": -0.9289999999999999,
+      "recession_start": NaN,
+      "lead_months": NaN,
+      "spy_to_recession": NaN,
+      "spy_next12": 0.1943893862998336,
+      "spy_maxdd_24m": -0.1294484747789587
+    }
+  ],
+  "probit": {
+    "const": -0.5709870513411409,
+    "slope_per_pp": -0.2684760353523269,
+    "pseudo_r2": 0.05443890959488085,
+    "n": 430,
+    "fit_end": "2025-10-31",
+    "p_at_spread": {
+      "-1.5 pp": 0.4331842575859399,
+      "-0.5 pp": 0.33114668230913114,
+      "+0.0 pp": 0.28400421013848354,
+      "+0.5 pp": 0.2403350913729218,
+      "+1.0 pp": 0.20060474752363538,
+      "+2.0 pp": 0.13394405417029076
+    },
+    "note": "in-sample; four recessions; descriptive only"
+  },
+  "rules": {
+    "Buy and hold SPY": {
+      "ann_return": 0.1033717940588792,
+      "vol": 0.1517636126742886,
+      "max_dd": -0.5079798480190452,
+      "sharpe": 0.5222548629508347,
+      "time_in_cash": 0.0
+    },
+    "Cash while the curve is inverted": {
+      "ann_return": 0.09237929892576346,
+      "vol": 0.14127560186402457,
+      "max_dd": -0.5079798480190453,
+      "sharpe": 0.48321712103356723,
+      "time_in_cash": 0.14363143631436315
+    },
+    "Cash for 12 months after it un-inverts": {
+      "ann_return": 0.09937876102659948,
+      "vol": 0.13834627523360124,
+      "max_dd": -0.463279377167498,
+      "sharpe": 0.5440424874378832,
+      "time_in_cash": 0.14634146341463414
+    },
+    "Half cash while inverted": {
+      "ann_return": 0.09830292649095185,
+      "vol": 0.14389063447662173,
+      "max_dd": -0.5079798480190452,
+      "sharpe": 0.5156028218241036,
+      "time_in_cash": 0.07181571815718157
+    }
+  }
+}
